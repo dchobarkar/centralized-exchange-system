@@ -1,8 +1,8 @@
 import { getServerSession } from "next-auth";
 
-import db from "@/app/db";
 import { ProfileCard } from "../components/ProfileCard";
 import { authConfig } from "../lib/auth";
+import db from "@/app/db";
 
 async function getUserWallet() {
   const session = await getServerSession(authConfig);

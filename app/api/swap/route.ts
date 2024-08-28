@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
   ).json();
 
   const swapTransactionBuf = Buffer.from(swapTransaction, "base64");
-  var transaction = VersionedTransaction.deserialize(swapTransactionBuf);
+  let transaction = VersionedTransaction.deserialize(swapTransactionBuf);
   const privateKey = getPrivateKeyFromDb(solWallet.privateKey);
   transaction.sign([privateKey]);
   const latestBlockHash = await connection.getLatestBlockhash();
@@ -85,5 +85,6 @@ function getPrivateKeyFromDb(privateKey: string) {
   const arr = privateKey.split(",").map((x) => Number(x));
   const privateKeyUintArr = Uint8Array.from(arr);
   const keypair = Keypair.fromSecretKey(privateKeyUintArr);
+
   return keypair;
 }

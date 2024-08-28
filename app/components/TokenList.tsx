@@ -18,6 +18,8 @@ function TokenRow({ token }: { token: TokenWithbalance }) {
       <div className="flex">
         <div>
           <Image
+            height={100}
+            width={100}
             src={token.image}
             className="h-10 w-10 rounded-full mr-2"
             alt="tokenImg"

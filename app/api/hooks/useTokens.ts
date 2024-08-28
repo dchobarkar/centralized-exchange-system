@@ -9,11 +9,11 @@ export interface TokenWithbalance extends TokenDetails {
 }
 
 export function useTokens(address: string) {
+  const [loading, setLoading] = useState(true);
   const [tokenBalances, setTokenBalances] = useState<{
     totalBalance: number;
     tokens: TokenWithbalance[];
   } | null>(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios.get(`/api/tokens?address=${address}`).then((res) => {

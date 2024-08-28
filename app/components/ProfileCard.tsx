@@ -33,6 +33,7 @@ export const ProfileCard = ({ publicKey }: { publicKey: string }) => {
 
   if (!session.data?.user) {
     router.push("/");
+
     return null;
   }
 
@@ -44,7 +45,7 @@ export const ProfileCard = ({ publicKey }: { publicKey: string }) => {
           name={session.data?.user?.name ?? ""}
         />
 
-        <div className="w-full flex px-10">
+        <div className="w-full flex flex-wrap px-10">
           {tabs.map((tab) => (
             <TabButton
               key={tab.id}
@@ -67,7 +68,7 @@ export const ProfileCard = ({ publicKey }: { publicKey: string }) => {
         </div>
 
         <div className={`${selectedTab === "swap" ? "visible" : "hidden"}`}>
-          <Swap tokenBalances={tokenBalances} publicKey={publicKey} />
+          <Swap tokenBalances={tokenBalances} />
         </div>
 
         <div
@@ -157,6 +158,8 @@ function Greeting({ image, name }: { image: string; name: string }) {
   return (
     <div className="flex p-12">
       <Image
+        width={100}
+        height={100}
         src={image}
         className="rounded-full w-16 h-16 mr-4"
         alt="Greeting img"

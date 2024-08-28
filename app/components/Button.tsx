@@ -20,12 +20,12 @@ export const PrimaryButton = ({
 
 export const SecondaryButton = ({
   children,
-  onClick,
   prefix,
+  onClick,
 }: {
   children: React.ReactNode;
-  onClick: () => void;
   prefix?: React.ReactNode;
+  onClick: () => void;
 }) => {
   return (
     <button

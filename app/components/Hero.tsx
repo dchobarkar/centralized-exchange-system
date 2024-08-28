@@ -10,18 +10,17 @@ export const Hero = () => {
   const router = useRouter();
 
   return (
-    <div>
-      <div className="text-6xl font-medium">
+    <div className="px-4 py-8 md:py-16 lg:py-24">
+      <div className="text-4xl sm:text-5xl md:text-6xl font-medium text-center">
         <span>The Indian Cryptocurrency</span>
-
-        <span className="text-blue-500 pl-4">Revolution</span>
+        <span className="text-blue-500 pl-2 md:pl-4">Revolution</span>
       </div>
 
-      <div className="flex justify-center pt-4 text-2xl text-slate-500">
+      <div className="flex justify-center pt-4 text-base sm:text-lg md:text-2xl text-slate-500 text-center">
         Create a frictionless wallet from India with just a Google Account.
       </div>
 
-      <div className="flex justify-center pt-2 text-2xl text-slate-500">
+      <div className="flex justify-center pt-2 text-base sm:text-lg md:text-2xl text-slate-500 text-center">
         Convert your INR into Cryptocurrency
       </div>
 
